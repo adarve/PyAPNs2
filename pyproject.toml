@@ -19,13 +19,15 @@ classifiers = [
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Topic :: Software Development :: Libraries"
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.7"
+python = ">=3.7,<3.12"
 cryptography = ">=1.7.2"
-hyper = ">=0.7"
+httpx = ">=0.24.0"
 pyjwt = ">=2.0.0"
 
 [tool.poetry.dev-dependencies]
@@ -33,7 +35,7 @@ pytest = "*"
 freezegun = "*"
 
 [tool.mypy]
-python_version = "3.7"
+python_version = "3.11"
 strict = true
 
 [tool.pylint.design]
@@ -49,7 +51,7 @@ disable = "missing-docstring, too-few-public-methods, locally-disabled, invalid-
 [tool.tox]
 legacy_tox_ini = """
 [tox]
-envlist = py37, py38, py39
+envlist = py37, py38, py39, py310, py311
 isolated_build = True
 
 [testenv]
